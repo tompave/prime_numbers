@@ -34,5 +34,8 @@ class TableTest < Minitest::Test
 
   def test_deep_array_access
     assert_instance_of PrimeNumbers::Product, @table[0][0]
+
+    assert_equal 4, @table[0][0].value
+    assert_equal 10, @table[2][0].value
   end
 end

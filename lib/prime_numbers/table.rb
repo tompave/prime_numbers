@@ -18,8 +18,8 @@ module PrimeNumbers
 
 
     def populate!
-      @columns = size.times.map do |x|
-        products = size.times.map do |y|
+      @columns = primes.map do |x|
+        products = primes.map do |y|
           Product.new x, y
         end
 
