@@ -25,6 +25,11 @@ class ColumnTest < Minitest::Test
   end
 
 
+  def test_attribute_size
+    assert_equal @products.length, @column.size
+  end
+
+
   def test_column_is_sorted
     assert_equal @column.products, @column.products.sort
 
