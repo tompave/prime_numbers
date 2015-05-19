@@ -59,4 +59,29 @@ class ProductTest < Minitest::Test
     assert_equal 5, product.width
   end
 
+
+  def test_comparisons
+    product = PrimeNumbers::Product.new 2, 5
+
+    assert product == PrimeNumbers::Product.new(5, 2)
+    refute product == PrimeNumbers::Product.new(5, 3)
+
+    assert product < PrimeNumbers::Product.new(3, 11)
+    assert product <= PrimeNumbers::Product.new(3, 11)
+
+    assert product >= PrimeNumbers::Product.new(3, 2)
+    assert product >= PrimeNumbers::Product.new(2, 5)
+  end
+
+
+  def test_sort
+    p1 = PrimeNumbers::Product.new 2, 2
+    p2 = PrimeNumbers::Product.new 2, 7
+    p3 = PrimeNumbers::Product.new 5, 11
+    p4 = PrimeNumbers::Product.new 100, 1000
+
+    list = [p2, p4, p3, p1]
+    assert_equal list.sort, [p1, p2, p3, p4]
+  end
+
 end

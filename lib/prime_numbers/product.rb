@@ -1,5 +1,7 @@
 module PrimeNumbers
   class Product
+    include Comparable
+
     attr_reader :x, :y
     alias_method :column, :x
     alias_method :row, :y
@@ -18,6 +20,12 @@ module PrimeNumbers
 
     def width
       to_s.length
+    end
+
+
+    def <=>(other)
+      raise TypeError unless other.is_a?(PrimeNumbers::Product)
+      value <=> other.value
     end
   end
 end
