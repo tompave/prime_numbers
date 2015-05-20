@@ -1,0 +1,26 @@
+#! /usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+
+require 'optparse'
+require 'prime_numbers'
+
+
+count = nil
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: prime_numbers --count N\n "
+
+  opts.on("--count N", OptionParser::DecimalInteger,
+          "How many prime numbers to include in the table") do |c|
+    count = c.to_i
+  end
+end
+
+parser.parse! ARGV
+
+if count
+  PrimeNumbers.run(count)
+else
+  abort(parser.banner)
+end
+
