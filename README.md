@@ -1,19 +1,31 @@
 # PrimeNumbers
 
-todo
+## Install me
 
-## Installation
+This simple CLI utility is provided as a gem, but is not published on [rubygems.org](https://rubygems.org/).
+To install it:
+```
+# get the code
+git clone git@github.com:tompave/prime_numbers.git
 
-Add this line to your application's Gemfile:
+# build the gemspec
+cd prime_numbers
+gem build prime_numbers.gemspec
 
-```ruby
-gem 'prime_numbers'
+# install the gem from the local zip file
+gem install prime_numbers-0.1.0
 ```
 
-And then execute:
 
-    $ bundle
+## Test me
 
-Or install it yourself as:
+```
+rake test
+```
 
-    $ gem install prime_numbers
+## Run me
+
+```
+prime_numbers --count 10
+prime_numbers --help
+```
