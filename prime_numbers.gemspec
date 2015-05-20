@@ -6,11 +6,11 @@ require 'prime_numbers/version'
 Gem::Specification.new do |spec|
   spec.name          = "prime_numbers"
   spec.version       = PrimeNumbers::VERSION
-  spec.authors       = ["tom"]
+  spec.authors       = ["Tommaso Pavese"]
   spec.email         = ["tommaso@pavese.me"]
 
   spec.summary       = %q{Prints a table representing multiplication pairs of the first X prime numbers}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/tompave/prime_numbers"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.5"
-  spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry", "~> 0.10"
 end
