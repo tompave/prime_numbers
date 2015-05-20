@@ -2,11 +2,6 @@ module PrimeNumbers
   class Product
     include Comparable
 
-    attr_reader :x, :y
-
-    alias_method :column, :x
-    alias_method :row, :y
-
 
     def initialize(x, y)
       @x, @y = x.to_i, y.to_i
@@ -14,7 +9,7 @@ module PrimeNumbers
 
 
     def value
-      @value ||= x * y
+      @value ||= @x * @y
     end
 
 
