@@ -1,14 +1,10 @@
 module PrimeNumbers
   class Column
-    attr_reader :header, :products, :size
-
-    alias_method :row_values, :products
-
+    attr_reader :header, :products
 
     def initialize(header, products)
       @header   = header
       @products = products.sort
-      @size     = products.length
     end
 
 

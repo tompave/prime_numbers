@@ -23,7 +23,7 @@ class TableTest < Minitest::Test
     assert_instance_of PrimeNumbers::Column, @table.columns[0]
 
     assert_equal @list.length, @table.columns.length
-    assert_equal @list.length, @table.columns[0].size
+    assert_equal @list.length, @table.columns[0].products.size
   end
 
 

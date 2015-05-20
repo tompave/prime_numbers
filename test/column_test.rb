@@ -21,12 +21,6 @@ class ColumnTest < Minitest::Test
   def test_attribute_products
     assert_instance_of Array, @column.products
     assert_equal @products, @column.products
-    assert_equal @products, @column.row_values
-  end
-
-
-  def test_attribute_size
-    assert_equal @products.length, @column.size
   end
 
 
