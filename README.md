@@ -25,7 +25,7 @@ git checkout tags/v1.0.0
 gem build prime_numbers.gemspec
 
 # install the gem from the local gem archive file
-gem install prime_numbers-1.0.0
+gem install prime_numbers-1.0.0.gem
 ```
 
 
