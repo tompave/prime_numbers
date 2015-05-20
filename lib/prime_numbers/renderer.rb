@@ -1,12 +1,8 @@
 module PrimeNumbers
   class Renderer
 
-    attr_reader :table, :primes, :size
-
     def initialize(table)
       @table = table
-      @primes = table.primes
-      @size = table.size
     end
 
 
@@ -15,7 +11,7 @@ module PrimeNumbers
       buffer << render_header
       buffer << render_separator
 
-      size.times do |row|
+      table.size.times do |row|
         buffer << render_row(row)
       end
 
@@ -24,6 +20,8 @@ module PrimeNumbers
 
 
     private
+
+    attr_reader :table
 
 
     def render_header
@@ -45,7 +43,7 @@ module PrimeNumbers
 
 
     def render_row(row)
-      buffer = format(primes[row], gutter_width)
+      buffer = format(table.primes[row], gutter_width)
 
       table.columns.each do |column|
         value = column[row].value

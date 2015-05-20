@@ -10,7 +10,7 @@ module PrimeNumbers
 
 
     def [](index)
-      @columns[index]
+      columns[index]
     end
 
 

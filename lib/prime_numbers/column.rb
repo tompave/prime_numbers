@@ -14,7 +14,7 @@ module PrimeNumbers
 
 
     def width
-      products.last.width
+      @width ||= products.last.width
     end
   end
 end
