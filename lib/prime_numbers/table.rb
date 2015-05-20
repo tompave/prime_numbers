@@ -20,10 +20,10 @@ module PrimeNumbers
     def populate!
       @columns = primes.map do |x|
         products = primes.map do |y|
-          Product.new x, y
+          Product.new(x, y)
         end
 
-        Column.new x, products
+        Column.new(x, products)
       end
     end
 

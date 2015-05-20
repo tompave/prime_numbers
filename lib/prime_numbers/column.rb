@@ -6,9 +6,9 @@ module PrimeNumbers
 
 
     def initialize(header, products)
-      @header = header
+      @header   = header
       @products = products.sort
-      @size = products.length
+      @size     = products.length
     end
 
 
