@@ -66,17 +66,5 @@ module PrimeNumbers
       @gutter_width ||= table.primes.last.to_s.length
     end
 
-
-    def column_width(index)
-      table[index].width
-    end
-
-
-    def table_width
-      @table_width ||= table.columns.reduce(0) do |total, col|
-        total + col.width
-      end
-    end
-
   end
 end
