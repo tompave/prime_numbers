@@ -8,7 +8,7 @@ require 'prime_numbers'
 
 count = nil
 parser = OptionParser.new do |opts|
-  opts.banner = "Usage: prime_numbers --count N\n "
+  opts.banner = "Usage: prime_numbers --count N"
 
   opts.on("--count N", OptionParser::DecimalInteger,
           "How many prime numbers to include in the table") do |c|
@@ -21,6 +21,6 @@ parser.parse! ARGV
 if count
   PrimeNumbers.run(count)
 else
-  abort(parser.banner)
+  abort(parser.banner + "\n ")
 end
 
