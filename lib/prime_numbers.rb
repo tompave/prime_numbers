@@ -6,5 +6,25 @@ require 'prime_numbers/table'
 require 'prime_numbers/renderer'
 
 module PrimeNumbers
-  # Your code goes here...
+  class << self
+
+    def run(count)
+      print_header
+
+      primes = NumberGenerator.get(count)
+      table  = Table.new(primes)
+      output = Renderer.new(table).render
+
+      puts output
+      puts " "
+    end
+
+
+    private
+
+
+    def print_header
+      puts "\nPrimeNumbers #{PrimeNumbers::VERSION}\n "
+    end
+  end
 end
