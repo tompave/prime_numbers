@@ -1,5 +1,3 @@
-require 'prime'
-
 module PrimeNumbers
   module NumberGenerator
     class << self
