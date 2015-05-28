@@ -24,16 +24,6 @@ class ColumnTest < Minitest::Test
   end
 
 
-  def test_column_is_sorted
-    assert_equal @column.products, @column.products.sort
-
-    unsorted_list = @products.dup
-    unsorted_list.push(unsorted_list.shift)
-    refute_equal @products, unsorted_list
-
-    column = PrimeNumbers::Column.new @x, unsorted_list
-    assert_equal column.products, column.products.sort
-  end
 
 
   def test_array_access
@@ -57,4 +47,31 @@ class ColumnTest < Minitest::Test
     column = PrimeNumbers::Column.new @x, more_products
     assert_equal 5, column.width
   end
+
+
+
+
+  def test_width_with_any_data_order
+    list = build_products_list(@x, 1, 2, 10000, 3, 4)
+    column = PrimeNumbers::Column.new(@x, list)
+
+    assert_equal 5, column.width
+
+
+
+    list = build_products_list(@x, 10000, 1, 2, 3, 4)
+    column = PrimeNumbers::Column.new(@x, list)
+
+    assert_equal 5, column.width
+  end
+
+
+  private
+
+  def build_products_list(header, *args)
+    args.map do |i|
+      PrimeNumbers::Product.new(header, i)
+    end
+  end
+
 end

@@ -4,7 +4,7 @@ module PrimeNumbers
 
     def initialize(header, products)
       @header   = header
-      @products = products.sort
+      @products = products
     end
 
 
@@ -14,7 +14,7 @@ module PrimeNumbers
 
 
     def width
-      @width ||= products.last.width
+      @width ||= products.sort.last.width
     end
   end
 end
