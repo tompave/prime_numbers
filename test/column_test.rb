@@ -49,6 +49,21 @@ class ColumnTest < Minitest::Test
   end
 
 
+  def test_width_with_letters
+    products = [
+      PrimeNumbers::LetterProduct.new("A", "B"),
+      PrimeNumbers::LetterProduct.new("A", "BBB"),
+      PrimeNumbers::LetterProduct.new("A", "BB")
+    ]
+    @column = PrimeNumbers::Column.new @x, products
+
+
+    assert_instance_of Fixnum, @column.width
+
+    expected = 4
+    assert_equal expected, @column.width
+  end
+
 
 
   def test_width_with_any_data_order

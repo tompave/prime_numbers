@@ -14,7 +14,13 @@ module PrimeNumbers
 
 
     def width
-      @width ||= products.sort.last.width
+      @width ||= products.sort do |a, b|
+        if a.is_a?(Product)
+          a <=> b
+        else
+          a.to_s <=> b.to_s
+        end
+      end.last.width
     end
   end
 end
